@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import NavBar from "../components/navbar";
 import "./globals.css";
-import { orbitron } from "./fonts";
+import { orbitron, exo2 } from "./fonts";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,13 +10,13 @@ interface LayoutProps {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en" className={orbitron.variable}>
-      <body className="bg-orange-50 flex flex-col min-h-screen px-4 py-2">
+    <html lang="en" className={`${orbitron.variable} ${exo2.variable}`}>
+      <body className="flex flex-col min-h-screen px-4 py-2 bg-orange-50">
         <header>
           <NavBar></NavBar>
         </header>
-        <main className="grow py-3">{children}</main>
-        <footer className="border-t py-3 text-center text-xs">
+        <main className="py-3 grow">{children}</main>
+        <footer className="py-3 text-xs text-center border-t">
           Game data and images courtesy of{" "}
           <a
             href="https://rawg.io"
