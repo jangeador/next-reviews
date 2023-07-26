@@ -1,6 +1,5 @@
 import Heading from "@/components/heading";
 import Link from "next/link";
-
 import {getFeaturedReview} from "@/lib/reviews";
 
 export default async function HomePage() {
