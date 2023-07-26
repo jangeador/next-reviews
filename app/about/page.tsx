@@ -1,11 +1,10 @@
-export default function AboutPage() {
-    return (
-        <>
-            <h1>About</h1>
-            <p>
-                Here we'll list all the About
+import Heading from "@/components/heading";
 
-            </p>
-        </>
-    );
+export default function AboutPage() {
+  return (
+    <>
+      <Heading>About</Heading>
+      <p>Here we'll list all the About</p>
+    </>
+  );
 }
