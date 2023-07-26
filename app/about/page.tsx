@@ -1,9 +1,9 @@
-export default function ReviewsPage() {
+export default function AboutPage() {
     return (
         <>
-            <h1>Reviews</h1>
+            <h1>About</h1>
             <p>
-                Here we'll list all the Reviews
+                Here we'll list all the About
 
             </p>
         </>
