@@ -1,18 +1,26 @@
 import Heading from "@/components/heading";
-import {getReview, getSlugs} from "@/lib/reviews";
+import { getReview, getSlugs } from "@/lib/reviews";
 
 export async function generateStaticParams() {
   const slugs = await getSlugs();
-  return slugs.map((slug) => ({slug}));
+  return slugs.map((slug) => ({ slug }));
 }
 
-export default async function ReviewPage({params: {slug}}) {
+export async function generateMetadata({ params: { slug } }) {
+  const review = await getReview(slug);
+  return {
+    title: review.title,
+  };
+}
+
+export default async function ReviewPage({ params: { slug } }) {
   const review = await getReview(slug);
 
   return (
     <>
       <Heading>{review.title}</Heading>
       <p className="pb-2 italic">{review.date}</p>
+      <ShareLinkButton/>
       <img
         src={review.image}
         alt=""
@@ -21,7 +29,7 @@ export default async function ReviewPage({params: {slug}}) {
         className="mb-2 rounded"
       />
       <article
-        dangerouslySetInnerHTML={{__html: review.body}}
+        dangerouslySetInnerHTML={{ __html: review.body }}
         className="max-w-screen-sm prose prose-slate"
       />
     </>

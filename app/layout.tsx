@@ -1,8 +1,8 @@
 import Link from "next/link";
-import type {ReactNode} from "react";
+import type { ReactNode } from "react";
 import NavBar from "../components/navbar";
 import "./globals.css";
-import {orbitron, exo2} from "./fonts";
+import { orbitron, exo2 } from "./fonts";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,14 +10,12 @@ interface LayoutProps {
 
 export const metadata = {
   title: "Indie Gamer",
+  template: "%s | Indie Gamer",
 };
 
-export default function RootLayout({children}: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html
-      lang="en"
-      className={`${orbitron.variable} ${exo2.variable}`}
-    >
+    <html lang="en" className={`${orbitron.variable} ${exo2.variable}`}>
       <body className="flex flex-col min-h-screen px-4 py-2 bg-orange-50">
         <header>
           <NavBar></NavBar>
